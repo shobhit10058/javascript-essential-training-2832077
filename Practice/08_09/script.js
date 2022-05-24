@@ -57,3 +57,37 @@ const content = `
       }</span></li>
     </ul>  
 `;
+
+const createArticle = (backpack) => {
+  const articleELement = document.createElement("article");
+  articleELement.innerHTML = `
+  <h1 class="backpack__name">${backpack.name}</h1>
+  <ul class="backpack__features">
+    <li class="packprop backpack__volume">Volume:<span> ${
+      backpack.volume
+    }l</span></li>
+    <li class="packprop backpack__color">Color:<span> ${
+      backpack.color
+    }</span></li>
+    <li class="packprop backpack__pockets">Number of pockets:<span> ${
+      backpack.pocketNum
+    }</span></li>
+    <li class="packprop backpack__strap">Left strap length:<span> ${
+      backpack.strapLength.left
+    } inches</span></li>
+    <li class="packprop backpack__strap">Right strap length:<span> ${
+      backpack.strapLength.right
+    } inches</span></li>
+    <li class="feature backpack__lid">Lid status:<span> ${
+      backpack.lidOpen ? "open" : "closed"
+    }</span></li>
+  </ul>  
+  `;
+  return articleELement;
+};
+
+const article = createArticle(frogpack);
+const HelpherImageFunction = (backpack, description) => {
+  const figureELement = document.createElement("figure");
+  figureELement;
+};

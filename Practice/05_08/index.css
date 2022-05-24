@@ -1,0 +1,21 @@
+.navbar {
+  background-color: black;
+  color: white;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
+}
+
+.navbar li {
+  padding: 10px;
+}
+
+.navbar li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar li:hover {
+  background-color: red;
+}

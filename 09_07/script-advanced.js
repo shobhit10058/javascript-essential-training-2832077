@@ -61,12 +61,20 @@ const backpackList = backpackObjectArray.map((backpack) => {
       <li class="feature backpack__pockets">Number of pockets:<span> ${
         backpack.pocketNum
       }</span></li>
-      <li class="feature backpack__strap" data-side="left">Left strap length: <span>${
-        backpack.strapLength.left
-      } inches</span></li>
-      <li class="feature backpack__strap" data-side="right">Right strap length: <span>${
-        backpack.strapLength.right
-      } inches</span></li>
+      <div class="update__strap__form">
+        <li class="feature backpack__strap" data-side="left">Left strap length: <span>${
+          backpack.strapLength.left
+        } inches</span></li>
+        <input type="number" placeholder="new left strap length"/>
+        <button type="button" class="update__strap">Update</button>
+      </div>
+      <div class="update__strap__form">
+        <li class="feature backpack__strap" data-side="right">Right strap length: <span>${
+          backpack.strapLength.right
+        } inches</span></li>
+        <input type="number" placeholder="new right strap length"/>
+        <button type="button" class="update__strap">Update</button>
+      </div>
       <li class="feature backpack__lid">Lid status: <span>${
         backpack.lidOpen ? "open" : "closed"
       }</span></li>
@@ -91,3 +99,13 @@ const main = document.querySelector(".maincontent");
 backpackList.forEach((backpack) => {
   main.append(backpack);
 });
+
+document.querySelectorAll(".update__strap").forEach((button) =>
+  button.addEventListener("click", (event) => {
+    const targetElement = event.target.parentNode.querySelector(
+      ".backpack__strap span"
+    );
+    const newValue = event.target.parentNode.querySelector("input").value;
+    targetElement.innerHTML = newValue + " inches";
+  })
+);

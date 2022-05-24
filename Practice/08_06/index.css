@@ -1,0 +1,17 @@
+.fields {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.peopleContainer {
+  margin: 0 auto;
+  width: 30%;
+  border: 2px solid red;
+}
+
+.actionBox {
+  display: flex;
+  justify-content: center;
+}
